@@ -1,5 +1,13 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio Website
 
+This is a portfolio website built with Next.js and Tailwind CSS. It showcases your skills, projects, and achievements in an elegant and responsive design.
+
+## Installation
+
+1. Clone the repository: `git clone https://github.com/RifqiF27/web-portfolio.git`
+2. Navigate to the project directory: `cd web-portfolio`
+3. Install the dependencies: `npm install`
+   
 ## Getting Started
 
 First, run the development server:
@@ -19,6 +27,18 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+## Dependencies
+
+The following dependencies are required for this project:
+
+- Next.js: A React framework for server-side rendering and static site generation.
+- Tailwind CSS: A highly customizable CSS framework.
+- React: A JavaScript library for building user interfaces.
+- React Icons: A collection of popular icons for React projects.
+- TypeScript: A typed superset of JavaScript that compiles to plain JavaScript.
+- Resend: Resend is the email API for developers.
+- Nodemailer: Nodemailer is the email API for developers.
 
 ## Learn More
 
