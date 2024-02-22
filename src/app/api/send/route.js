@@ -14,7 +14,7 @@ export async function POST(req, res) {
     // Using Resend
     const resendData = await resend.emails.send({
       from: fromEmail,
-      to: email,
+      to: [email],
       subject: `Follow up on ${subject}`,
       react: (
         <>
