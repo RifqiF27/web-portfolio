@@ -10,7 +10,7 @@ export const projectsData = [
     id: 1,
     title: "Levi's Cloning",
     description:
-      "Cloning Levi’s website with React.js. There are 3 websites in total. First one is for customer/user, second is for the admin, and the third one is a mobile app.",
+      "Cloning Levi's website with React.js. There are 3 websites in total. First one is for customer/user, second is for the admin, and the third one is a mobile app.",
     tag: ["All", "Mobile"],
     image: "/images/projects/levis.png",
     gitUrl: "https://github.com/RifqiF27/client-mobile-app-cloning-levis",
