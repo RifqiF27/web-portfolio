@@ -2,14 +2,14 @@
 const nodemailer = require("nodemailer");
 const { renderToStaticMarkup } = require("react-dom/server");
 
-const { SMTP_EMAIL, SMTP_PASSWORD } = process.env;
+const { NEXT_PUBLIC_SMTP_EMAIL, NEXT_PUBLIC_SMTP_PASSWORD } = process.env;
 async function sendMail({ from, to = SMTP_EMAIL, name, subject, react }) {
 
   const transport = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: SMTP_EMAIL,
-      pass: SMTP_PASSWORD,
+      user: NEXT_PUBLIC_SMTP_EMAIL,
+      pass: NEXT_PUBLIC_SMTP_PASSWORD,
     },
   });
   // console.log(transport, "transport");
