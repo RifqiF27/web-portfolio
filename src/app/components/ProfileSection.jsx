@@ -4,6 +4,30 @@ import React, { useState, useEffect } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import axios from "axios";
+
+const colorsOption = [
+  "blue",
+  "green",
+  "purple",
+  "pink",
+  "brown",
+  "darkmagenta",
+  "darksalmon",
+  "dodgerblue",
+  "firebrick",
+  "darkviolet",
+  "gold",
+  "limegreen",
+  "indigo",
+  "salmon",
+  "seagreen",
+  "slateblue",
+  "chocolate",
+  "mediumorchid",
+  "darkcyan",
+  "tomato",
+];
 
 const ProfileSection = () => {
   const [textColor, setTextColor] = useState("white");
@@ -11,11 +35,23 @@ const ProfileSection = () => {
 
   useEffect(() => {
     const fetchCVUrl = async () => {
-      const response = await fetch(
-        "https://drive.google.com/file/d/1CA8NYxbgxPev7xDBIB7xi1lrkoK0FnUg/view?usp=sharing"
-      );
-      const url = response.url;
-      setCVUrl(url);
+      try {
+        const fileId = process.env.NEXT_PUBLIC_FILE_ID;
+        const apiKey = process.env.NEXT_PUBLIC_GDRIVE_KEY;
+
+        const response = await axios.get(
+          `https://www.googleapis.com/drive/v3/files/${fileId}?key=${apiKey}&fields=webContentLink`
+        );
+
+        if (response.status === 200) {
+          const url = response.data.webContentLink;
+          setCVUrl(url);
+        } else {
+          console.error("Error fetching CV URL:", response.statusText);
+        }
+      } catch (error) {
+        console.error("Error fetching CV URL:", error.message);
+      }
     };
 
     fetchCVUrl();
@@ -23,9 +59,11 @@ const ProfileSection = () => {
 
   const handleDownloadCV = () => {
     if (cvUrl) {
-      if (cvUrl) {
-        window.open(cvUrl, "_blank");
-      }
+      const downloadLink = document.createElement("a");
+      downloadLink.href = cvUrl;
+      downloadLink.click();
+    } else {
+      console.error("URL CV tidak tersedia");
     }
   };
 
@@ -45,29 +83,9 @@ const ProfileSection = () => {
             <br />
             <button
               onClick={() => {
-                const items = [
-                  "blue",
-                  "green",
-                  "purple",
-                  "pink",
-                  "brown",
-                  "darkmagenta",
-                  "darksalmon",
-                  "dodgerblue",
-                  "firebrick",
-                  "darkviolet",
-                  "gold",
-                  "limegreen",
-                  "indigo",
-                  "salmon",
-                  "seagreen",
-                  "slateblue",
-                  "chocolate",
-                  "mediumorchid",
-                  "darkcyan",
-                  "tomato",
-                ];
-                setTextColor(items[Math.floor(Math.random() * items.length)]);
+                setTextColor(
+                  colorsOption[Math.floor(Math.random() * colorsOption.length)]
+                );
               }}
             >
               <div
@@ -138,10 +156,11 @@ const ProfileSection = () => {
           <div className="rounded-full bg-[#181818] w-[200px] h-[200px] lg:w-[300px] lg:h-[300px] relative">
             <Image
               src="/images/profile-image.png"
-              alt="profile image"
+              alt="profile-image"
               className="absolute rounded-full transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
               width={300}
               height={300}
+              priority
             />
           </div>
         </motion.div>
