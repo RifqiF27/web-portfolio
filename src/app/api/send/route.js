@@ -9,7 +9,7 @@ const myEmail = process.env.NEXT_PUBLIC_MY_EMAIL;
 export async function POST(req, res) {
   try {
     const { name, email, subject, message } = await req.json();
-    console.log(name, email, subject, message);
+    // console.log(name, email, subject, message);
 
     // Using Resend
     const resendData = await resend.emails.send({
@@ -60,7 +60,7 @@ export async function POST(req, res) {
     // Using sendMail
     const sendMailData = await sendMail({
       from: email,
-      to: myEmail,
+      to: [myEmail],
       subject: subject,
       react: (
         <>

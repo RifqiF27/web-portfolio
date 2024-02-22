@@ -32,7 +32,6 @@ const EmailSection = () => {
       const response = await fetch(endpoint, options);
       const resData = await response.json();
 
-      console.log(response, "res-----");
       // console.log(JSONdata);
       // console.log(resData);
       if (response.status === 200) {
@@ -63,9 +62,9 @@ const EmailSection = () => {
         <p className="text-[#ADB7BE] mb-4 max-w-md">
           I am actively exploring new opportunities, and my inbox is always open
           for meaningful conversations. Whether you have a question, want to
-          discuss potential collaborations, or just drop a friendly &apos;hi,&apos; I&apos;ll
-          make it a priority to respond promptly. Looking forward to connecting
-          with you!
+          discuss potential collaborations, or just drop a friendly
+          &apos;hi,&apos; I&apos;ll make it a priority to respond promptly.
+          Looking forward to connecting with you!
         </p>
       </div>
       <div>
@@ -135,7 +134,7 @@ const EmailSection = () => {
                 id="message"
                 rows={8}
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Let&apos;s talk about..."
+                placeholder="Let's talk about..."
                 required
               />
             </div>
