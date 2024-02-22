@@ -2,9 +2,9 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import sendMail from "../../../lib/mail";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-const fromEmail = process.env.FROM_EMAIL;
-const myEmail = process.env.MY_EMAIL;
+const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
+const fromEmail = process.env.NEXT_PUBLIC_FROM_EMAIL;
+const myEmail = process.env.NEXT_PUBLIC_MY_EMAIL;
 
 export async function POST(req, res) {
   try {
