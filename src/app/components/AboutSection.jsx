@@ -76,7 +76,7 @@ const AboutSection = () => {
 
   return (
     <section className="text-white my-12 md:my-12" id="about">
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
+      <div className="grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
         <Image
           src="/images/animated.png"
           alt="animated"
@@ -97,7 +97,7 @@ const AboutSection = () => {
             continuous learning and thrive in dynamic and challenging
             environments.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-3 justify-start mt-6">
+          <div className="grid grid-cols-1 xl:grid-cols-4 gap-2 mt-6">
             <TabButton
               tabSelect={() => handleTabChange("skills")}
               active={tab === "skills"}
