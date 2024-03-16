@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import ProfileSection from "./components/ProfileSection";
 import AboutSection from "./components/AboutSection";
 import Navbar from "./components/Navbar";
@@ -5,6 +6,13 @@ import ProjectSection from "./components/ProjectSection";
 import EmailSection from "./components/EmailSection";
 import Footer from "./components/Footer";
 import AchievementsSection from "./components/AchievementsSection";
+
+export const metadata: Metadata = {
+  title: "Portfolio - Rifqi Fadluloh",
+  icons: {
+    icon: "/images/logo.png",
+  },
+};
 
 export default function Home() {
   return (
