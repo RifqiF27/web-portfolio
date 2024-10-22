@@ -124,7 +124,7 @@ const ProfileSection = () => {
               splitter={(str) => str.split(/(?= )/)}
               cursor={false}
               sequence={[
-                "As a dedicated web developer and designer, I thrive on the synergy of code, design, and technology to craft visually stunning and highly functional digital experiences. My ultimate goal is to evolve into a proficient full-stack web developer, adept at seamlessly integrating front-end and back-end technologies. With a keen eye for aesthetics and a love for innovative solutions, I am dedicated to creating websites that not only look appealing but also deliver a seamless user experience. Through my journey, I am constantly pushing boundaries and embracing new challenges in the dynamic world of web development.",
+                "As a passionate web developer and designer, I excel at blending code, design, and technology to create visually appealing and highly functional digital experiences. My aspiration is to become a proficient full-stack web developer, seamlessly integrating front-end and back-end technologies. With a strong eye for aesthetics and a commitment to innovative solutions, I focus on building websites that not only captivate users but also provide a smooth and engaging user experience. I am dedicated to continuously pushing boundaries and embracing new challenges in the ever-evolving landscape of web development.",
                 3000,
               ]}
               speed={{ type: "keyStrokeDelayInMs", value: 150 }}

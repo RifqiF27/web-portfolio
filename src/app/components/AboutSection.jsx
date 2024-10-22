@@ -87,15 +87,7 @@ const AboutSection = () => {
         <div className="mt-4 md:mt-0 flex flex-col text-left h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            I am a highly motivated individual with a passion for technology and
-            problem-solving. With a strong foundation in electrical engineering,
-            I recently completed the Hacktiv8 Full Stack JavaScript Immersive
-            Program. This immersive experience has not only expanded my
-            technical toolkit, equipping me with a wide range of technical
-            skills, but has also ignited my curiosity to explore the endless
-            possibilities within the world of technology. I am dedicated to
-            continuous learning and thrive in dynamic and challenging
-            environments.
+          I am a motivated technology enthusiast with a strong background in electrical engineering and recent training in Full Stack JavaScript at Hacktiv8. Currently learning Golang, I aim to apply my technical skills and problem solving abilities in a challenging role. My engineering experience in process optimization and team training makes me a valuable asset for organizations focused on innovation and efficiency. I thrive in dynamic environments and am committed to continuous learning.
           </p>
           <div className="grid grid-cols-1 xl:grid-cols-4 gap-2 mt-6">
             <TabButton
