@@ -36,6 +36,26 @@ export const projectsData = [
     gitUrl: "https://github.com/RifqiF27/web-portfolio",
     previewUrl: "/",
   },
+  {
+    id: 4,
+    title: "POS App",
+    description:
+      "Developed APIs for a POS application using Golang and the Gin framework, covering authentication, staff management, menu handling, reservations, revenue reporting, and notifications. Utilized PostgreSQL with GORM, Redis, JWT tokens, Zap logger, CRUD operations, data export, pagination, CDN integration, and Swagger UI.",
+    tag: ["All", "Web"],
+    image: "/images/projects/POS.png",
+    gitUrl: "https://github.com/paulus-otto-harman/project-POS-APP-golang-team1",
+    previewUrl: "/",
+  },
+  {
+    id: 5,
+    title: "Microservices Chat Systen",
+    description:
+      "Built a real-time chat app using Golang with microservices architecture. Features include user registration via OTP, real-time messaging with WebSocket, availability tracking, and chat history. Used PostgreSQL, Redis, gRPC for communication, API Gateway for routing, and Docker for deployment.",
+    tag: ["All", "Web"],
+    image: "/images/projects/chat-app.png",
+    gitUrl: "https://github.com/Nameless-ID/project-Chat-APP-golang-team2",
+    previewUrl: "/",
+  },
 ];
 
 const ProjectSection = () => {

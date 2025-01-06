@@ -10,16 +10,21 @@ const TAB_DATA = [
     content: (
       <ul className="list-disc pl-2 grid grid-cols-2 md:grid-cols-3 items-center">
         <li>Node.js</li>
+        <li>GO</li>
+        <li>GORM</li>
+        <li>Gin.js</li>
+        <li>gRPC.js</li>
+        <li>JWT</li>
         <li>Express</li>
         <li>PostgreSQL</li>
         <li>Sequelize</li>
         <li>GraphQL</li>
         <li>Vue</li>
-        <li>Pinia</li>
         <li>React</li>
         <li>React Native</li>
         <li>Next</li>
         <li>AWS</li>
+        <li>Docker</li>
         <li>Git</li>
       </ul>
     ),
@@ -29,6 +34,7 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="list-disc pl-2">
+        <li>Lumoshive - Backend Golang</li>
         <li>Hacktiv8 - Full Stack JavaScript Immersive</li>
         <li>Polytechnic State Of Jakarta - Electrical Engineering</li>
       </ul>
@@ -49,6 +55,11 @@ const TAB_DATA = [
     id: "certifications",
     content: (
       <ul className="list-disc pl-2">
+        <li>
+          <a href="/">
+            Lumoshive - Backend Golang
+          </a>
+        </li>
         <li>
           <a href="https://sertiva.id/credential/1a0b2bc8-ef62-4581-931b-87c5ce2c28ef">
             Hacktiv8 - Fullstack Javascript Immersive
@@ -87,7 +98,7 @@ const AboutSection = () => {
         <div className="mt-4 md:mt-0 flex flex-col text-left h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-          I am a motivated technology enthusiast with a strong background in electrical engineering and recent training in Full Stack JavaScript at Hacktiv8. Currently learning Golang, I aim to apply my technical skills and problem solving abilities in a challenging role. My engineering experience in process optimization and team training makes me a valuable asset for organizations focused on innovation and efficiency. I thrive in dynamic environments and am committed to continuous learning.
+          My journey began with a foundation in electrical engineering from Politeknik Negeri Jakarta, which paved the way for my transition into full-stack development. At Hacktiv8 Indonesia and Lumoshive, I honed my skills in Golang and JavaScript, deepening my understanding of front-end and back-end technologies. At PT. Suzuki Indomobil Motor, I sharpened my analytical skills by ensuring production machinery efficiency and training colleagues. Now, I am ready to innovate and deliver impactful solutions in the tech development world.
           </p>
           <div className="grid grid-cols-1 xl:grid-cols-4 gap-2 mt-6">
             <TabButton
