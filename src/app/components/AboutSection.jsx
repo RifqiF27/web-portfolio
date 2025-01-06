@@ -12,8 +12,8 @@ const TAB_DATA = [
         <li>Node.js</li>
         <li>GO</li>
         <li>GORM</li>
-        <li>Gin.js</li>
-        <li>gRPC.js</li>
+        <li>Gin</li>
+        <li>gRPC</li>
         <li>JWT</li>
         <li>Express</li>
         <li>PostgreSQL</li>
