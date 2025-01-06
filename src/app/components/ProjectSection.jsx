@@ -48,7 +48,7 @@ export const projectsData = [
   },
   {
     id: 5,
-    title: "Microservices Chat Systen",
+    title: "Microservices Chat System",
     description:
       "Built a real-time chat app using Golang with microservices architecture. Features include user registration via OTP, real-time messaging with WebSocket, availability tracking, and chat history. Used PostgreSQL, Redis, gRPC for communication, API Gateway for routing, and Docker for deployment.",
     tag: ["All", "Web"],
