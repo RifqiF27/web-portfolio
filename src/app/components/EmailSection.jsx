@@ -2,7 +2,7 @@
 
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Turnstile } from "next-turnstile";
+import { Turnstile } from "@codesurvia/next-turnstile";
 import React, { useState } from "react";
 
 const EmailSection = () => {
@@ -10,11 +10,29 @@ const EmailSection = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [turnstileToken, setTurnstileToken] = useState("");
+  const [turnstileStatus, setTurnstileStatus] = useState("required");
+
+  const handleTurnstile = (status, message = null, token = "") => {
+    setTurnstileStatus(status);
+    if (status === "success") {
+      setTurnstileToken(token);
+      setError(null);
+    } else if (status === "error") {
+      setError(message || "Security check failed. Please try again.");
+      setTurnstileToken("");
+    } else if (status === "expired") {
+      setError(message || "Security check expired. Please verify again.");
+      setTurnstileToken("");
+    } else {
+      setError(null);
+      setTurnstileToken("");
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!turnstileToken) {
-      setError("Please complete the captcha.");
+    if (turnstileStatus !== "success" || !turnstileToken) {
+      setError("Please complete the security check.");
       return;
     }
     const data = {
@@ -42,7 +60,9 @@ const EmailSection = () => {
         setEmailSubmitted(true);
         setError(null);
       } else {
-        setError("Error submitting the form. Please try again later.");
+        setError(
+          resData.error || "Error submitting the form. Please try again later."
+        );
       }
     } catch (error) {
       setError("Error submitting the form. Please try again later.");
@@ -143,11 +163,20 @@ const EmailSection = () => {
             <div className="mb-6 justify-center flex">
               <Turnstile
                 siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? ""}
-                onSuccess={setTurnstileToken}
+                onVerify={(token) => handleTurnstile("success", null, token)}
                 onError={() =>
-                  setError("Captcha error. Please reload the page.")
+                  handleTurnstile(
+                    "error",
+                    "Security check failed. Please try again."
+                  )
                 }
-                onExpire={() => setTurnstileToken("")}
+                onExpire={() =>
+                  handleTurnstile(
+                    "expired",
+                    "Security check expired. Please verify again."
+                  )
+                }
+                onLoad={() => handleTurnstile("required", null)}
                 className="cf-turnstile"
                 style={{ minHeight: 65 }}
               />
