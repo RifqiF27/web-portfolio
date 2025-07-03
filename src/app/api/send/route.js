@@ -8,8 +8,20 @@ const myEmail = process.env.NEXT_PUBLIC_MY_EMAIL;
 
 export async function POST(req, res) {
   try {
-    const { name, email, subject, message } = await req.json();
+    const { name, email, subject, message, turnstileToken } = await req.json();
     // console.log(name, email, subject, message);
+
+     // Validasi Turnstile
+    const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
+    const verifyRes = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: `secret=${turnstileSecret}&response=${turnstileToken}`,
+    });
+    const verifyData = await verifyRes.json();
+    if (!verifyData.success) {
+      return NextResponse.json({ error: "Turnstile verification failed" }, { status: 400 });
+    }
 
     // Using Resend
     const resendData = await resend.emails.send({
